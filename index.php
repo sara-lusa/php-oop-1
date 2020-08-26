@@ -5,26 +5,32 @@ $users = [
   [
     'name' => 'Sara',
     'surname' => 'Lusa',
+    'eta' => 21,
+    'mail' => 'sara@mail.it'
   ],
   [
     'name' => 'Pippo',
     'surname' => 'Verdi',
+    'eta' => 30,
+    'mail' => 'pippo@mail.it'
   ],
   [
     'name' => 'Emma',
     'surname' => 'Marrone',
-    'mail' => '',
+    'eta' => 45,
+    'mail' => 'emma@mail.it'
   ],
   [
     'name' => 'Irene',
     'surname' => 'Grandi',
-    'mail' => '',
+    'eta' => 22,
+    'mail' => 'irene@mail.it'
   ]
 ];
 
 foreach ($users as $user) {
   $utente = new User($user['name'], $user['surname']);
-  echo 'Blogger: ' . $utente->getFullName() . '<br>';
+  echo $utente->getFullName() . '<br>' . 'Età: ' . $user['eta'] . '<br>' . 'Mail: ' . $user['mail'] . '<br><br>';
 }
 
 // $sara = new User('Sara', 'Lusa');
@@ -36,5 +42,4 @@ foreach ($users as $user) {
 // $pippo->eta = 30;
 // echo 'Blogger: ' . $pippo->getFullName() . '<br>';
 // // var_dump($pippo);
-
 ?>
