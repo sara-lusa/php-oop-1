@@ -1,15 +1,40 @@
 <?php
 require_once(__DIR__ . '/User.php');
 
-$sara = new User();
-$sara->name = 'Sara';
-$sara->surname = 'Lusa';
-$sara->eta = 21;
-var_dump($sara);
+$users = [
+  [
+    'name' => 'Sara',
+    'surname' => 'Lusa',
+  ],
+  [
+    'name' => 'Pippo',
+    'surname' => 'Verdi',
+  ],
+  [
+    'name' => 'Emma',
+    'surname' => 'Marrone',
+    'mail' => '',
+  ],
+  [
+    'name' => 'Irene',
+    'surname' => 'Grandi',
+    'mail' => '',
+  ]
+];
 
-$pippo = new User();
-$pippo->name = 'Pippo';
-$pippo->surname = 'Verdi';
-$pippo->eta = 30;
-var_dump($pippo);
+foreach ($users as $user) {
+  $utente = new User($user['name'], $user['surname']);
+  echo 'Blogger: ' . $utente->getFullName() . '<br>';
+}
+
+// $sara = new User('Sara', 'Lusa');
+// $sara->eta = 21;
+// echo 'Blogger: ' . $sara->getFullName() . '<br>';
+// // var_dump($sara);
+//
+// $pippo = new User('Pippo', 'Verdi');
+// $pippo->eta = 30;
+// echo 'Blogger: ' . $pippo->getFullName() . '<br>';
+// // var_dump($pippo);
+
 ?>
